@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if college_list %}
+    <table class="table table-striped">
+    	<thead>
+    		<tr>
+    			<th>#</th>
+    			<th>College</th>
+    			<th>State</th>
+    			<th>Type</th>
+    			<th>% Need Met</th>
+    			<th>Test Optional</th>
+    			<th>Engineering</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+		    {% for college in college_list %}
+		    <tr>
+		        <td>{{ college.id }}</td>
+		        <td><a href="{% url 'college:detail' college.id%}">{{ college.nick_name }}</a></td>
+		        <td>{{ college.state }}</td>
+		        <td>{{ college.public_private }}</td>
+		        <td>{{ college.need_met }}</td>
+		        <td>{{ college.test_optional }}</td>
+		        <td>{{ college.engineering }}</td>
+		    </tr>
+		    {% endfor %}
+		</tbody>
+    </table>
+{% else %}
+    <p>No colleges are available.</p>
+{% endif %}
+
+{% endblock %}

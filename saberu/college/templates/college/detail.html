@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="panel panel-default">
+	
+	<div class="panel-heading">
+		<h4>{{ college.nick_name }}</h4>
+	</div>
+
+	<div class="panel-body">
+		
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>State</strong>
+					</div>
+					<div class="panel-body">
+						{{ college.state }}
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>Type</strong>
+					</div>
+					<div class="panel-body">
+						{{ college.public_private }}
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>Opportunity Program</strong>
+					</div>
+					<div class="panel-body">
+						{{ college.opportunity_program }}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>% of Need</strong>
+					</div>
+					<div class="panel-body">
+						{{ college.need_met }}
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>Test Optional</strong>
+					</div>
+					<div class="panel-body">
+						{{ college.test_optional }}
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>Engineering</strong>
+					</div>
+					<div class="panel-body">
+						{{ college.engineering }}
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div>
+	<a href="{% url 'college:detail' college.id|subtract:1 %}" class="btn btn-primary btn-lg active" role="button">Previous</a>
+	<a href="{% url 'college:detail' college.id|add:1 %}" class="btn btn-primary btn-lg active" role="button">Next</a>
+</div>
+
+{% endblock %}
