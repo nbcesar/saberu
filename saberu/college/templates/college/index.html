@@ -3,7 +3,8 @@
 {% block content %}
 
 {% if college_list %}
-    <table class="table table-striped">
+<div class="college-list">
+    <table class="table table-striped display" id="collegeList" cellspacing="0" width="100%">
     	<thead>
     		<tr>
     			<th>#</th>
@@ -15,11 +16,24 @@
     			<th>Engineering</th>
     		</tr>
     	</thead>
+    	
+    	<tfoot>
+    		<tr>
+    			<th>#</th>
+    			<th>College</th>
+    			<th>State</th>
+    			<th>Type</th>
+    			<th>% Need Met</th>
+    			<th>Test Optional</th>
+    			<th>Engineering</th>
+    		</tr>
+    	</tfoot>
+
     	<tbody>
 		    {% for college in college_list %}
 		    <tr>
 		        <td>{{ college.id }}</td>
-		        <td><a href="{% url 'college:detail' college.id%}">{{ college.nick_name }}</a></td>
+		        <td><a href="{% url 'college:detail' college.id %}">{{ college.nick_name }}</a></td>
 		        <td>{{ college.state }}</td>
 		        <td>{{ college.public_private }}</td>
 		        <td>{{ college.need_met }}</td>
@@ -29,6 +43,7 @@
 		    {% endfor %}
 		</tbody>
     </table>
+  </div>
 {% else %}
     <p>No colleges are available.</p>
 {% endif %}
