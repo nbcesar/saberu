@@ -1,0 +1,39 @@
+{% extends 'ng-base.html' %}
+
+{% block content %}
+<div ng-controller="collegeCtrl">
+	<div ui-grid="gridOptions" ui-grid-selection class="myGrid"></div>
+</div>
+
+
+<!--<div ng-controller='collegeCtrl'>
+	<table ng-table class="table table-striped display" cellspacing="0" width="100%" >
+		
+		<thead>
+    		<tr>
+    			<th>#</th>
+    			<th>College</th>
+    			<th>State</th>
+    			<th>Type</th>
+    			<th>% Need Met</th>
+    			<th>Test Optional</th>
+    			<th>Engineering</th>
+    		</tr>
+	    </thead>
+
+	    <tbody>
+		    <tr ng-repeat="college in collegeList">
+		        <td>[[ college.id ]]</td>
+		        <td><a href="#">[[ college.nick_name ]]</a></td>
+		        <td>[[ college.state ]]</td>
+		        <td>[[ college.public_private ]]</td>
+		        <td>[[ college.need_met ]]</td>
+		        <td>[[ college.test_optional ]]</td>
+		        <td>[[ college.engineering ]]</td>
+		    </tr>
+		</tbody>
+
+	</table>
+</div>-->
+
+{% endblock %}

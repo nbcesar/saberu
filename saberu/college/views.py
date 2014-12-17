@@ -8,7 +8,8 @@ from college.models import College
 # Create your views here.
 
 class IndexView(generic.ListView):
-	template_name = 'college/index.html'
+	#template_name = 'college/index.html'
+	template_name = 'college/ng-index.html'
 	context_object_name = 'college_list'
 
 	def get_queryset(self):
@@ -18,3 +19,4 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
 	model = College
 	template_name = 'college/detail.html'
+

@@ -15,7 +15,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #SITE_ROOT = os.path.dirname(PROJECT_ROOT)
 SITE_ROOT = os.path.dirname(BASE_DIR)
 
-TEMPLATE_DIRS = (os.path.join(SITE_ROOT, 'templates'),)
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),'/var/www/static/',)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
@@ -40,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'college',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
